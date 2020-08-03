@@ -1,0 +1,2 @@
+D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\zbePixelEngine\Output\Engine\Debug_x86\Engine.pdb
+D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\zbePixelEngine\Output\Engine\int\Debug_x86\Engine.pdb
