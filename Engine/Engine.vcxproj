@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)</OutDir>
-    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)</IntDir>
+    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)\</OutDir>
+    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)</OutDir>
-    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)</IntDir>
+    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)\</OutDir>
+    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)</OutDir>
-    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)</IntDir>
+    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)\</OutDir>
+    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)</OutDir>
-    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)</IntDir>
+    <OutDir>$(SolutionDir)Output\Engine\$(Configuration)_$(PlatformShortName)\</OutDir>
+    <IntDir>$(SolutionDir)Output\Engine\int\$(Configuration)_$(PlatformShortName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,16 +98,17 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Middleware\SDL2-devel-2.0.12-VC\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\zbePixelEngine\Middleware\SDL2-devel-2.0.12-VC\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Middleware\SDL2-devel-2.0.12-VC\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -118,14 +119,15 @@
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Middleware\SDL2-devel-2.0.12-VC\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\zbePixelEngine\Middleware\SDL2-devel-2.0.12-VC\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Middleware\SDL2-devel-2.0.12-VC\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,6 +140,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Middleware\SDL2-devel-2.0.12-VC\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -146,10 +149,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\zbePixelEngine\Middleware\SDL2-devel-2.0.12-VC\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Middleware\SDL2-devel-2.0.12-VC\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -162,6 +165,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Middleware\SDL2-devel-2.0.12-VC\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -170,13 +174,19 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\zbePixelEngine\Middleware\SDL2-devel-2.0.12-VC\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Middleware\SDL2-devel-2.0.12-VC\lib\$(PlatformShortName)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Drawable.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="z_math.h" />
+    <ClInclude Include="Matrix22.h" />
+    <ClInclude Include="Matrix33.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -185,6 +195,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
