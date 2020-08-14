@@ -19,6 +19,9 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{e4c9fa99-8bda-40ec-875e-20bcbbf7694a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{38c46f6c-b35a-480b-8f05-6807d8c68023}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -45,6 +48,9 @@
     <ClInclude Include="z_math.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -52,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
