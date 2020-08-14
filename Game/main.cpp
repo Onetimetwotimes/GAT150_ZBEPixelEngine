@@ -1,7 +1,9 @@
 #include <iostream>
 #include <SDL_image.h>
+#include <Keyboard.h>
+#include <stdio.h>
 
-bool quit;
+zbe::Input::Keyboard keyboard;
 
 	int main(int, char**){
 
@@ -24,6 +26,7 @@ bool quit;
 			std::cout << "SDL_Renderer Error: " << SDL_GetError() << std::endl; SDL_Quit(); return 1;
 		}
 
+		keyboard.Init();
 
 
 		SDL_Surface* surface = IMG_Load("assets/waterdoods.png");
@@ -34,19 +37,33 @@ bool quit;
 		rect.w = 64;
 		rect.h = 64;
 
+		SDL_Event event;
+		bool quit = false;
 		while (!quit) {
+			SDL_PollEvent(&event);
+
+			switch (event.type) {
+			case SDL_QUIT:
+				quit = true;
+				break;
+			}
+
 			SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+			SDL_RenderClear(renderer);
+
 
 			SDL_RenderCopy(renderer, texture, NULL, &rect);
-
 			SDL_RenderPresent(renderer);
+
+			
+
+			keyboard.Update();
+
+			std::cout << keyboard.getButtonState(SDL_SCANCODE_UP);
 		}
 
-
-		// wait for keyboard enter to exit
-		std::getchar();
-
-	IMG_Quit();
-	SDL_Quit(); 
-	return 0; 
+		keyboard.Close();
+		IMG_Quit();
+		SDL_Quit(); 
+		return 0; 
 	}
