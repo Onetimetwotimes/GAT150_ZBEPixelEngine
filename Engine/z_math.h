@@ -1,6 +1,7 @@
 #pragma once
 #include <math.h>
 #include "Vector2.h"
+
 namespace zbe {
 	const double PI = 3.14159265359;
 	const double TWO_PI = 6.28318530718;

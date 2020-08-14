@@ -59,7 +59,6 @@ zbe::Input::Keyboard keyboard;
 
 			keyboard.Update();
 
-			std::cout << keyboard.getButtonState(SDL_SCANCODE_UP);
 		}
 
 		keyboard.Close();
