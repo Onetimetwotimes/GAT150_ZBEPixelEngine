@@ -1,5 +1,6 @@
 #pragma once
 #include "SDL.h"
+#include "System.h"
 
 enum class KeyCodes {
 
@@ -7,7 +8,7 @@ enum class KeyCodes {
 
 namespace zbe {
 	namespace Input {
-		class Keyboard {
+		class Keyboard : public System {
 		public:
 			enum e_ButtonState {
 				IDLE = 0,
@@ -16,9 +17,9 @@ namespace zbe {
 				HELD = 3
 			};
 
-			bool Init();
-			void Close();
-			void Update();
+			bool Init() override;
+			void Close() override;
+			void Update() override;
 
 			e_ButtonState getButtonState(int buttonId);
 
