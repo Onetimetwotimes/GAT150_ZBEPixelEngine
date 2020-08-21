@@ -41,7 +41,7 @@ bool zbe::Graphics::Sprite::Draw(zbe::math::Vector2 position, zbe::math::Vector2
 
 
 	
-	SDL_RenderCopy(renderer, texture, NULL, &rect);
+	SDL_RenderCopyEx(renderer, texture, NULL, &rect, rotation, nullptr, SDL_FLIP_NONE);
 
 	return true;
 }
