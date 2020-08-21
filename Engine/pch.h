@@ -10,11 +10,13 @@
 // add headers that you want to pre-compile here
 #include "framework.h"
 
-#include "Keyboard.h"
-#include "Matrix22.h"
-#include "Matrix33.h"
-#include "Vector2.h"
+#include <string>
+#include <list>
+#include <vector>
+#include <map>
+#include <chrono>
 
-
+#include <SDL.h>
+#include <SDL_image.h>
 #endif //PCH_H
  
