@@ -6,7 +6,7 @@ namespace zbe {
 	namespace math {
 		struct  Matrix33
 		{
-			Matrix33() {  };			
+			Matrix33() { SetIdentity(); }
 			
 			void Scale(float s) {
 				m[0][0] = s; m[1][0] = 0; m[2][0] = 0;

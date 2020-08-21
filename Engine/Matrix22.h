@@ -4,7 +4,8 @@
 
 namespace zbe {
 	struct Matrix22 {
-		Matrix22() {  };
+		Matrix22() { SetIdentity(); }
+
 		Matrix22(const zbe::math::Vector2& column1, const zbe::math::Vector2& column2) {
 			m[0][0] = column1.x; m[1][0] = column2.x;
 			m[0][1] = column1.y; m[1][1] = column2.y;
