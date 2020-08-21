@@ -1,16 +1,22 @@
 #pragma once
-#include "Drawable.h"
+#include "Resource.h"
 #include <string>
 
 namespace zbe {
-	class Sprite : public Drawable {
-	public:
-		bool Create(const std::string name);
+	namespace Graphics {
+		class Sprite : public zbe::Resource {
+		public:
+			bool Create(const std::string name, void* renderer) override;
 
-		bool Destroy();
+			void Destroy() override;
 
-		bool Draw(zbe::math::Vector2 position, zbe::math::Vector2 scale, float rotation) override;
-	private:
+			bool Draw(zbe::math::Vector2 position, zbe::math::Vector2 scale, float rotation);
 
-	};
+			zbe::math::Vector2 GetSize();
+
+		private:
+			SDL_Texture* texture;
+			SDL_Renderer* renderer;
+		};
+	}
 }
