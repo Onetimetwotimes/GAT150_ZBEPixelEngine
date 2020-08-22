@@ -2,7 +2,7 @@
 #include "ResourceManager.h"
 
 bool zbe::ResourceManager::Init() {
-	return false;
+	return true;
 }
 
 void zbe::ResourceManager::Close() {
