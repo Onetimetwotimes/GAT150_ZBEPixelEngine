@@ -2,6 +2,7 @@
 #include "Resource.h"
 #include <string>
 #include "Vector2.h"
+#include "Renderer.h"
 
 namespace zbe {
 	namespace Graphics {
@@ -17,7 +18,7 @@ namespace zbe {
 
 		private:
 			SDL_Texture* texture;
-			SDL_Renderer* renderer;
+			Renderer* renderer;
 		};
 	}
 }

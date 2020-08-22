@@ -5,13 +5,13 @@
 #include "SDL_image.h"
 
 bool zbe::Graphics::Sprite::Create(const std::string filename, void* renderer) {
-	this->renderer = static_cast<SDL_Renderer*>(renderer);
+	this->renderer = static_cast<Renderer*>(renderer);
 
 	SDL_Surface* s = IMG_Load(filename.c_str());
 	if (s == nullptr)
 		return false;
 
-	texture = SDL_CreateTextureFromSurface(this->renderer, s);
+	texture = SDL_CreateTextureFromSurface(this->renderer->renderer, s);
 	SDL_FreeSurface(s);
 	if (texture == nullptr)
 		return false;
@@ -41,7 +41,7 @@ bool zbe::Graphics::Sprite::Draw(zbe::math::Vector2 position, zbe::math::Vector2
 
 
 	
-	SDL_RenderCopyEx(renderer, texture, NULL, &rect, rotation, nullptr, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(renderer->renderer, texture, NULL, &rect, rotation, nullptr, SDL_FLIP_NONE);
 
 	return true;
 }
