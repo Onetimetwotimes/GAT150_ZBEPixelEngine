@@ -18,14 +18,14 @@ void zbe::Graphics::Renderer::Update()
 
 bool zbe::Graphics::Renderer::Create(const std::string name, int width, int height)
 {
-	SDL_Window* _window = SDL_CreateWindow(name.c_str(), 0, 0, 800, 600, SDL_WINDOW_SHOWN);
-	if (window == nullptr) {
+	SDL_Window* _window = SDL_CreateWindow(name.c_str(), 100, 100, width, height, SDL_WINDOW_SHOWN);
+	if (_window == nullptr) {
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl; return false;
 	}
 	window = _window;
 
 	SDL_Renderer* _renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_WINDOW_SHOWN);
-	if (renderer == nullptr) {
+	if (_renderer == nullptr) {
 		std::cout << "SDL_Renderer Error: " << SDL_GetError() << std::endl; return false;
 	}
 	renderer = _renderer;
