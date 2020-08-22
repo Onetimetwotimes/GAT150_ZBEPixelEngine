@@ -15,7 +15,7 @@ namespace zbe {
 	}
 
 	double Timer::ElapsedSeconds() {
-		return ElapsedSeconds() / static_cast<double>(TicksPerSecond());
+		return ElapsedTicks() / static_cast<double>(TicksPerSecond());
 	}
 	void FrameTime::Tick() {
 		dT = ElapsedSeconds();
