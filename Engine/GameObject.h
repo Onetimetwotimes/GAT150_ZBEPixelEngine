@@ -1,17 +1,19 @@
 #pragma once
 #include "Object.h"
 #include "Transform.h"
+#include "Engine.h"
 
 namespace zbe {
 	class Component;
+	class Scene;
 
-	class GameObject : Object {
+	class GameObject : public Object {
 	public:
 		
 		virtual void Create(void* data) override;
 		virtual void Destroy() override;
 		virtual void Read(const rapidjson::Value& value) override;
-
+		void setScene(Scene* scene);
 
 		void Update();
 		void Draw();
@@ -33,15 +35,15 @@ namespace zbe {
 			return result;
 		}
 
-		std::string Name() {
-			return name;
-		}
+		std::string Name() { return name; }
 
-		friend class Component;
-		friend class PhysicsComponent;
+		zbe::math::Transform getTransform() { return transform;	}
+		zbe::math::Transform transform;
+		zbe::Engine* engine;
+
 	protected:
 		std::vector<Component*> components;
-		zbe::math::Transform transform;
+		zbe::Scene* scene;
 		std::string name;
 
 
