@@ -1,0 +1,14 @@
+{
+   "position":[
+      100,
+      100
+   ],
+   "scale":1,
+   "angle":0,
+   "components":[
+      {
+         "type":"SpriteComponent",
+         "imgPath":"assets/waterdoods.png"
+      }
+   ]
+}
