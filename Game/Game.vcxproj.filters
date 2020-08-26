@@ -24,4 +24,15 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="json\test.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="json\object.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="json\scene.json">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
